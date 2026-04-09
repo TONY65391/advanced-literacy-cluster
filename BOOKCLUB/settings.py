@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-t4o=bb-u)%cpc!m8kyc29+oe8b74*j&pq5^ljawj10!icb(3%k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://advanced-literacy-cluster.vercel.app/']
 
 
 # Application definition
