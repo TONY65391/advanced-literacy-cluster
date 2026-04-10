@@ -83,13 +83,6 @@ button {
   }
 }
 
-/* Optional: Improve small screen readability */
-@media (max-width: 480px) {
-  body {
-    padding: 0 1rem;
-  }
-}
-
 header{
     display: flex;
     align-items: center;
@@ -271,7 +264,7 @@ main .hero .cta{
     align-items: center;
     gap: 10px;
 }
-main .hero .cta a, main .hero .cta a:last-child:hover{
+main .hero .cta a{
     padding: 8px 15px;
     border: 2px solid var(--antique-gold);
     background: var(--antique-gold);
@@ -284,6 +277,10 @@ main .hero .cta a:last-child, main .hero .cta a:hover{
     background: transparent;
     color: var(--antique-gold);
     font-weight: light;
+}
+main .hero .cta a:last-child:hover{
+    background-color: var(--antique-gold);
+    color: black;
 }
 
 
