@@ -5,7 +5,10 @@
     -webkit-user-select: none;
     user-select: none;
     transition: all 0.5s ease;
-    
+}
+
+body{
+    background: var(--deep-mahogany);
 }
 
 /* Root font scaling */
@@ -94,14 +97,19 @@ header{
     border: 1px solid rgba(0, 0, 0, 0.3);
     padding: 5px 10px;
     overflow: hidden;
-    margin-top: 20px;
+    width: 80%;
     border-radius: 50px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
     background: var(--deep-mahogany);
+    z-index: 4;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 header .logo img{
     object-fit: cover;
-    width: 150px;
+    width: 120px;
     border-radius: 20px;
     filter: drop-shadow(0px 0px 10px rgba(0,0,5,0.3));
 }
@@ -157,7 +165,6 @@ header ul li a{
     font-family: "Sekuya", system-ui;
     font-size: 10px;
     padding: 10px 15px;
-    border: 2px solid red;
     border: 2px solid var(--antique-gold);
     background: var(--antique-gold);
 }
@@ -168,21 +175,22 @@ header ul li a:hover{
 
 header .menu{
     width: 30px;
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 4px;
     cursor: pointer;
+    margin-right: 7px;
 }
 header .menu:hover div:first-child,header .menu:hover div:last-child, header .menu:hover div:nth-child(2){
-    width: 100%;
+    background: white;
 }
 header .menu div{
     background: var(--antique-gold);
     height: 3px;
     border-radius: 40px;
+    margin-left: auto;
 }
 header .menu div:first-child{
     width: 90%;
@@ -194,21 +202,105 @@ header .menu div:last-child{
     width: 40%;
 }
 
+header .menu.open{
+    margin-top: 10px;
+}
 header .menu.open div:first-child{
-    transform: translateY(5px) rotate(180deg);
-    background: red;
+    transform: translate(-4px, 3px);
+    rotate: 45deg;
+    width: 100%;
 }
 header .menu.open div:nth-child(2){
     width: 70%;
+    opacity: 0;
 }
 header .menu.open div:last-child{
     width: 40%;
+    width: 100%;
+    transform: translate(6px, -14px);
+    rotate: -45deg;
 }
+
+/* HERO SECTION */
+main .hero{
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    align-items: center;
+    background-image: url(./images/hero.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+}
+main .hero .txt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7), rgba(0,0,0,0.1));
+    padding: 0px 60px;
+    line-height: 1.5;
+    width: min(650px, 100%);
+    min-height: 90vh;
+}
+main .hero .txt h6{
+    margin-right: auto;
+    border: 2px solid var(--antique-gold);
+    font-weight: light;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: var(--antique-gold);
+    color: black;
+    font-family: "Sekuya", sans-serif;
+}
+main .hero .txt h2{
+    font-family: "Sekuya", system-ui;
+    font-size: 35px;
+    line-height: 1.5;
+    text-shadow: 0px 0px 5px var(--deep-mahogany);
+}
+main .hero .cta{
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+main .hero .cta a, main .hero .cta a:last-child:hover{
+    padding: 8px 15px;
+    border: 2px solid var(--antique-gold);
+    background: var(--antique-gold);
+    border-radius: 10px;
+    color: black;
+    font-family: "Titallium", system-ui;
+    font-weight: bold;
+}
+main .hero .cta a:last-child, main .hero .cta a:hover{
+    background: transparent;
+    color: var(--antique-gold);
+    font-weight: light;
+}
+
+
+
 @media screen and (max-width:678px) {
-    header .logo img{
-        width: 100px;
-    }    
-    header nav{
+    header .logo img{width: 100px;}    
+    header nav, header ul{display: none;}
+
+    main .hero{ border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
+    main .hero .txt{background: linear-gradient(to right, rgba(0,0,0,0.7)); padding: 0px 20px; text-align: center;}
+    main .hero .txt h6{margin-right: 0; margin-bottom: 10px;}
+    main .hero .txt h2{font-size: 1.7rem;}
+    main .hero .cta{margin-right: 0;}
+    main .hero .cta a{padding: 5px 10px;}
+}
+@media screen and (min-width:678px) {
+    header .menu{
         display: none;
-    }
+    }    
 }
