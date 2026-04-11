@@ -75,14 +75,6 @@ button {
   cursor: pointer;
 }
 
-/* Optional: Improve readability on very large screens */
-@media (min-width: 1200px) {
-  body {
-    max-width: 1200px;
-    margin: auto;
-  }
-}
-
 header{
     display: flex;
     align-items: center;
@@ -90,15 +82,19 @@ header{
     border: 1px solid rgba(0, 0, 0, 0.3);
     padding: 5px 10px;
     overflow: hidden;
-    width: 80%;
+    width: min(1200px, 97%);
     border-radius: 50px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
     background: var(--deep-mahogany);
     z-index: 4;
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 50%;
+    transition: top 0.5s ease;
     transform: translateX(-50%);
+}
+header.scroll{
+    top: 0;
 }
 header .logo img{
     object-fit: cover;
@@ -112,9 +108,7 @@ header nav{
 }
 header nav a{
     color: white;
-    /* font-family: "Titallium", sans-serif; */
-    font-family: "Sekuya", system-ui;
-    font-size: 12px;
+    font-family: "Figtree", system-ui;
     font-weight: light;
     font-style: italic;
     position: relative;
@@ -216,8 +210,6 @@ header .menu.open div:last-child{
 
 /* HERO SECTION */
 main .hero{
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr); */
     display: flex;
     align-items: center;
     background-image: url(./images/hero.png);
@@ -225,8 +217,8 @@ main .hero{
     background-position: center;
     background-repeat: no-repeat;
     min-height: 90vh;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     overflow: hidden;
 }
 main .hero .txt{
@@ -235,8 +227,8 @@ main .hero .txt{
     justify-content: center;
     flex-direction: column;
     color: white;
-    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7), rgba(0,0,0,0.1));
-    padding: 0px 60px;
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7), rgba(0,0,0,0.1), rgba(0,0,0,0.1));
+    padding: 0px 80px;
     line-height: 1.5;
     width: min(650px, 100%);
     min-height: 90vh;
@@ -249,7 +241,7 @@ main .hero .txt h6{
     border-radius: 10px;
     background: var(--antique-gold);
     color: black;
-    font-family: "Sekuya", sans-serif;
+    font-family: "Figtree", sans-serif;
 }
 main .hero .txt h2{
     font-family: "Sekuya", system-ui;
@@ -257,6 +249,7 @@ main .hero .txt h2{
     line-height: 1.5;
     text-shadow: 0px 0px 5px var(--deep-mahogany);
 }
+main .hero .txt p{opacity: 0.8;}
 main .hero .cta{
     margin-right: auto;
     margin-top: 20px;
@@ -283,9 +276,53 @@ main .hero .cta a:last-child:hover{
     color: black;
 }
 
+/* JOIN Section */
+main .join{
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+main .join h3{
+    font-family: "Figtree";
+}
+main .join p{
+    margin: 10px 0;
+}
+main .join .grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: stretch;
+    gap: 25px;
+    margin-top: 50px;
+}
+main .join .card{
+    border: 1px solid var(--antique-gold);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--deep-navy);
+    box-shadow: 0px 0px 10px var(--antique-gold);
+}
+main .join .card a{
+    display: block;
+    margin-top: 30px;
+    border: 2px solid var(--antique-gold);
+    color: var(--antique-gold);
+    font-family: "Figtree", system-ui;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    background: var(--deep-mahogany);
+}
 
 
-@media screen and (max-width:678px) {
+/* Mobile */
+@media (max-width: 767px) {
     header .logo img{width: 100px;}    
     header nav, header ul{display: none;}
 
@@ -295,9 +332,25 @@ main .hero .cta a:last-child:hover{
     main .hero .txt h2{font-size: 1.7rem;}
     main .hero .cta{margin-right: 0;}
     main .hero .cta a{padding: 5px 10px;}
+
+    main .join .grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
-@media screen and (min-width:678px) {
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
     header .menu{
         display: none;
-    }    
+    }  
+    main .join .grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    header .menu{
+        display: none;
+    } 
 }
