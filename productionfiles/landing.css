@@ -222,8 +222,6 @@ main .hero{
     background-position: center;
     background-repeat: no-repeat;
     min-height: 95vh;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
     overflow: hidden;
 }
 main .hero .wrap{
@@ -292,10 +290,11 @@ main .hero .cta a:last-child:hover{
 /* ABOUT */
 main .about{
     text-align: center;
-    padding: 60px 0px 0px;
+    padding: 60px 0px;
     background: var(--deep-navy);
     color: white;
-    border-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 main .about .grid{
     display: grid;
@@ -465,13 +464,83 @@ main .how .grid .card{
     box-shadow: 0px 0px 10px rgba(0,0,0,0.9);
     line-height: 1.5;
 }
+main .how .grid .card:hover{
+    cursor: pointer;
+    margin-top: -20px;
+    background: rgba(0,0,0,0.8);
+}
 main .how .grid .card h4{font-family: "Titallium", sans-serif; margin: 10px 0;}
 main .how .grid .card p{font-family: "Figtree", sans-serif; opacity: 0.6;}
 
 
 /* MONTH */
 main .month{
-    background: linear-gradient(135deg, #FFF7ED, #FDE68A);
+    background: url(./images/book_of_the_month_bg.png), black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+main .month .wrap{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+    padding: 60px 0px;
+}
+main .month .wrap h3{
+    font-family: "Figtree", sans-serif;
+}
+main .month .wrap .grid{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.5);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+main .month .wrap .grid .img{
+    width: 100%;
+}
+main .month .wrap .grid .img img{
+    max-width: 100%;
+    object-fit: cover;
+}
+main .month .wrap .grid .txt{
+    padding: 60px 30px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main .month .wrap .grid .txt h4{
+    font-family: "Sekuya", system-ui;
+    line-height: 1.5;
+}
+main .month .wrap .grid .txt p{opacity: 0.6;}
+main .month .wrap .grid .txt .cta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;    
+    margin: 20px auto 0px 0px;
+    width: fit-content;
+}
+main .month .wrap .grid .txt .cta a, main .month .wrap .grid .txt .cta a:last-child:hover{
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid var(--antique-gold);
+    border-radius: 5px;
+    font-family: "Figtree";
+    background: var(--antique-gold);
+}
+main .month .wrap .grid .txt .cta a:last-child, main .month .wrap .grid .txt .cta a:hover{
+    background: none;
+    color: white;
 }
 
 /* Mobile */
@@ -487,10 +556,15 @@ main .month{
     main .hero .wrap .cta{margin-right: 0;}
     main .hero .wrap .cta a{padding: 5px 10px;}
 
-    main .about{border-radius: 0px;}
+    main .about{border-radius: 0px; padding: 60px 0px 0px;}
     main .about .grid{padding: 10px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;}
     main .about .grid .txt{padding: 30px 20px;}
     main .about .grid .txt a{margin-top: 20px;}
+
+    main .month{background-size: contain;}
+    main .month .wrap .grid{flex-direction: column-reverse;}
+    main .month .wrap .grid .txt{text-align: center;}
+    main .month .wrap .grid .txt .cta{margin-right: 0;}
 
     main .join .grid, main .how .grid, main .about .grid{grid-template-columns: repeat(1, 1fr);}
     main .join .grid::after{min-height: 100%; height: 100%; width: 5px;}
