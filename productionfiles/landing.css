@@ -292,7 +292,7 @@ main .hero .cta a:last-child:hover{
 /* ABOUT */
 main .about{
     text-align: center;
-    padding: 60px 0px;
+    padding: 60px 0px 0px;
     background: var(--deep-navy);
     color: white;
     border-radius: 20px;
@@ -325,13 +325,14 @@ main .about .grid .txt{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 20px;
+    padding: 40px 20px;
 }
 main .about .grid .txt h4{
     font-family: "Sekuya", system-ui;
 }
 main .about .grid .txt p{
     opacity: 0.7;
+    margin-top: 20px;
 }
 main .about .grid .txt a{
     display: block;
@@ -339,7 +340,7 @@ main .about .grid .txt a{
     background: var(--antique-gold);
     padding: 10px 20px;
     width: fit-content;
-    margin: 0 auto;
+    margin: 20px auto 0px auto;
     border: 2px solid var(--antique-gold);
     border-radius: 5px;
     font-family: "Titallium", sans-serif;
@@ -486,6 +487,9 @@ main .month{
     main .hero .wrap .cta{margin-right: 0;}
     main .hero .wrap .cta a{padding: 5px 10px;}
 
+    main .about{border-radius: 0px;}
+    main .about .grid{padding: 10px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;}
+    main .about .grid .txt{padding: 30px 20px;}
     main .about .grid .txt a{margin-top: 20px;}
 
     main .join .grid, main .how .grid, main .about .grid{grid-template-columns: repeat(1, 1fr);}
@@ -501,6 +505,9 @@ main .month{
     main .hero .wrap .txt h2{width: 100%; margin: 0 auto;}
     main .hero .wrap .txt p{width: 80%; margin: 10px auto;}
     main .hero .wrap .txt h6, main .hero .wrap .cta{margin-right: 0;}
+
+    main .about{padding: 30px 20px;}
+    main .about .grid .txt{padding: 30px 20px;}
 
     main .join .grid, main .how .grid{grid-template-columns: repeat(2, 1fr);}
 }
