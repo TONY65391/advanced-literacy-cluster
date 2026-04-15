@@ -520,7 +520,7 @@ main .month .wrap .grid .txt h4{
     font-family: "Sekuya", system-ui;
     line-height: 1.5;
 }
-main .month .wrap .grid .txt p{opacity: 0.6;}
+main .month .wrap .grid .txt p{opacity: 0.6; margin-top: 20px;}
 main .month .wrap .grid .txt .cta{
     display: flex;
     align-items: center;
@@ -541,6 +541,95 @@ main .month .wrap .grid .txt .cta a, main .month .wrap .grid .txt .cta a:last-ch
 main .month .wrap .grid .txt .cta a:last-child, main .month .wrap .grid .txt .cta a:hover{
     background: none;
     color: white;
+}
+
+/* REVIEWS */
+main .reviews{
+    background: url(./images/reviews_bg.png);
+    text-align: center;
+    color: white;
+}
+main .reviews h3{font-family: "Titallium", sans-serif;}
+main .reviews .wrap{
+    width: 100%;
+    padding: 60px 0px;
+    background: rgba(0,0,0,0.5);
+}
+main .reviews .wrap .flex{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    overflow-x: scroll;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 40px 0;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+@supports (scrollbar-width: none){
+    main .reviews .wrap .flex{
+        scrollbar-width: none;
+    }
+}
+main .reviews .wrap .flex .card{
+    width: min(400px, 100%);
+    border-radius: 10px;
+    border: 2px solid var(--antique-gold);
+    -webkit-backdrop-filter: blur(10px) brightness(60%);
+    backdrop-filter: blur(10px) brightness(60%);
+    padding: 20px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    text-align: left;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main .reviews .wrap .flex .card .avatar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+main .reviews .wrap .flex .card .avatar img{
+    max-width: 50%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+main .reviews .wrap .flex .card .avatar .rating{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main .reviews .wrap .flex .card .avatar .rating p{font-style: italic;}
+main .reviews .wrap .flex .card .txt{
+    margin-top: 20px;
+    font-family: "Titallium", sans-serif;
+}
+main .reviews .wrap .flex .card .txt p{
+    font-style: italic;
+}
+main .reviews .wrap .flex .card .txt .stats h5{
+    margin-top: 10px;
+    opacity: 0.7;
+}
+main .reviews .wrap .flex .card .txt .stats{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--antique-gold);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background: rgba(0,0,0,0.5);
+}
+main .reviews .wrap .flex .card .txt .stats img{
+    max-width: 50px;
+    object-fit: cover;
+    border-radius: 28px;
+    -webkit-backdrop-filter: drop-shadow(0px 0px 10px var(--antique-gold));
+    backdrop-filter: drop-shadow(0px 0px 10px var(--antique-gold));
 }
 
 /* Mobile */
@@ -564,7 +653,9 @@ main .month .wrap .grid .txt .cta a:last-child, main .month .wrap .grid .txt .ct
     main .month{background-size: contain;}
     main .month .wrap .grid{flex-direction: column-reverse;}
     main .month .wrap .grid .txt{text-align: center;}
-    main .month .wrap .grid .txt .cta{margin-right: 0;}
+    main .month .wrap .grid .txt .cta{width: fit-content; margin: 20px auto;}
+
+    main .reviews .wrap .flex{padding: 40px 20px;}
 
     main .join .grid, main .how .grid, main .about .grid{grid-template-columns: repeat(1, 1fr);}
     main .join .grid::after{min-height: 100%; height: 100%; width: 5px;}
