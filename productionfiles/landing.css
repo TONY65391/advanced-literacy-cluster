@@ -63,7 +63,7 @@ span {
 
 /* Links */
 a {
-  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  font-size: clamp(0.65rem, 1.3vw, 1.1rem);
   text-decoration: none;
 }
 
@@ -445,32 +445,29 @@ main .how h3{
     text-align: center;
     font-family: "Figtree", sans-serif;/
 }
-main .how .grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 1200px;
-    gap: 20px;
+main table{
     margin: 20px auto;
-    padding: 20px;
+    max-width: 1200px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    overflow-x: scroll;
 }
-main .how .grid .card{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: rgba(0,0,0,0.7);
-    padding: 30px;
-    border-radius: 10px;
+main table tbody tr td{
+    background: white;
+    border: 2px solid black;
+}
+main table tr th{
+    padding: 10px;
+    background: black;
     color: white;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.9);
-    line-height: 1.5;
+    font-family: "Titallium", sans-serif;
 }
-main .how .grid .card:hover{
-    cursor: pointer;
-    margin-top: -20px;
-    background: rgba(0,0,0,0.8);
+main table tbody tr td{
+    font-family: "Figtree", system-ui;
+    padding: 10px;
+    opacity: 0.7;
 }
-main .how .grid .card h4{font-family: "Titallium", sans-serif; margin: 10px 0;}
-main .how .grid .card p{font-family: "Figtree", sans-serif; opacity: 0.6;}
+
 
 
 /* MONTH */
@@ -546,6 +543,9 @@ main .month .wrap .grid .txt .cta a:last-child, main .month .wrap .grid .txt .ct
 /* REVIEWS */
 main .reviews{
     background: url(./images/reviews_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     text-align: center;
     color: white;
 }
@@ -563,9 +563,10 @@ main .reviews .wrap .flex{
     max-width: 1200px;
     margin: 20px auto;
     gap: 20px;
-    padding: 40px 0;
+    padding: 40px 0px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    border-radius: 20px;
 }
 @supports (scrollbar-width: none){
     main .reviews .wrap .flex{
@@ -587,6 +588,10 @@ main .reviews .wrap .flex .card{
     flex-direction: column;
     justify-content: space-between;
 }
+main .reviews .wrap .flex .card:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 3px var(--antique-gold);
+}
 main .reviews .wrap .flex .card .avatar{
     display: flex;
     align-items: center;
@@ -596,6 +601,9 @@ main .reviews .wrap .flex .card .avatar img{
     max-width: 50%;
     object-fit: cover;
     border-radius: 10px;
+}
+main .reviews .wrap .flex .card .avatar span{
+    margin: 5px 0;
 }
 main .reviews .wrap .flex .card .avatar .rating{
     display: flex;
@@ -657,7 +665,7 @@ main .reviews .wrap .flex .card .txt .stats img{
 
     main .reviews .wrap .flex{padding: 40px 20px;}
 
-    main .join .grid, main .how .grid, main .about .grid{grid-template-columns: repeat(1, 1fr);}
+    main .join .grid, main .about .grid{grid-template-columns: repeat(1, 1fr);}
     main .join .grid::after{min-height: 100%; height: 100%; width: 5px;}
 }
 
