@@ -9,7 +9,9 @@
 
 body{
     background: var(--deep-mahogany);
+    scroll-behavior: smooth;
 }
+html{scroll-behavior: smooth;}
 
 /* Root font scaling */
 :root {
@@ -734,6 +736,25 @@ footer .grid .signup form button:hover{
     background: var(--antique-gold);
     color: black;
 }
+footer .grid .sm ul{
+    margin-top: 20px;
+}
+footer .grid .sm ul li{
+    display: flex;
+    align-items: stretch;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+footer .grid .sm ul li i{
+    padding: 0 15px 0px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .grid .sm ul li span{
+    font-family: "Figtree";
+    padding: 10px;
+}
 footer .copyright{
     text-align: center;
     font-family: "Figtree", sans-serif;
@@ -788,6 +809,8 @@ footer .copyright{
 
     main .about{padding: 30px 20px;}
     main .about .grid .txt{padding: 30px 20px;}
+
+    main .reviews .wrap .flex{padding: 40px 20px;}
 
     footer .grid .signup form .email{margin: 20px auto;}
 
