@@ -126,19 +126,13 @@ header nav a:hover{
 header nav a::after{
     position: absolute;
     content: "";
+    bottom: -7px;
     left: 0;
-    bottom: -5px;
-    height: 2px;
-    width: 30%;
-    opacity: 0;
-    animation: out 0.5s linear;
-    background: var(--antique-gold);
+    width: 0%;
+    transition: width 0.5s ease;
+    height: 3px;
     border-radius: 20px;
-    transition: width 0.5s ease-out;
-}
-@keyframes out{
-    from{width: 100%; opacity: 1;}
-    to{width: 30%; opacity: 0;}
+    background: linear-gradient(to right, var(--antique-gold));
 }
 header nav a:hover::after{
     width: 100%;
@@ -448,7 +442,7 @@ main .how h3{
 }
 main table{
     margin: 20px auto;
-    width: min(1200px, 100%);
+    width: min(1200px, 80%);
     border: 2px solid black;
     border-collapse: collapse;
     overflow-x: scroll;
@@ -641,6 +635,115 @@ main .reviews .wrap .flex .card .txt .stats img{
     backdrop-filter: drop-shadow(0px 0px 10px var(--antique-gold));
 }
 
+/* FOOTER */
+footer{
+    background: url(./images/footer_bg.png);
+    color: white;
+    padding: 60px 0 0 0;
+}
+footer p{
+    opacity: 0.7;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+footer .grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: auto;
+    gap: 50px;
+    background: rgba(0,0,0,0.6);
+    padding: 60px 30px;
+}
+footer .grid h4{
+    font-family: "Figtree", sans-serif;
+}
+footer .grid .logo{
+    text-align: center;
+}
+footer .grid .logo img{
+    width: 250px;
+    -webkit-backdrop-filter: drop-shadow(10px, 10px, 10px, white);
+    backdrop-filter: drop-shadow(10px, 10px, 10px, white);
+    border-radius: 10px;
+}
+footer .grid .links ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    margin-top: 20px;
+}
+footer .grid .links ul li a{
+    color: white;
+    font-family: "Titallium", sans-serif;
+    position: relative;
+}
+footer .grid .links ul li a::after{
+    position: absolute;
+    content: "";
+    bottom: -7px;
+    left: 0;
+    width: 0%;
+    transition: width 0.5s ease;
+    height: 3px;
+    border-radius: 20px;
+    background: linear-gradient(to right, var(--antique-gold), var(--deep-navy));
+    background: linear-gradient(to right, var(--antique-gold));
+}
+footer .grid .links ul li a:hover{
+    color: var(--antique-gold);
+}
+footer .grid .links ul li a:hover::after{
+    width: 100%;
+}
+footer .grid .signup form{
+    margin: 20px 0;
+}
+footer .grid .signup form .email{
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: 20px 0;
+    box-shadow: 0px 0px 5px var(--antique-gold);
+    width: fit-content;
+    border-radius: 8px;
+    overflow: hidden;
+}
+footer .grid .signup form .email label{
+    padding: 12px 15px;
+    background: var(--antique-gold);
+    color: black;
+}
+footer .grid .signup form .email input{
+    outline: none;
+    border: none;
+    padding: 0px 10px;
+}
+footer .grid .signup form button{
+    font-size: 16px;
+    background: none;
+    border: 1px solid var(--antique-gold);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px var(--antique-gold);
+}
+footer .grid .signup form button:hover{
+    box-shadow: 0px 0px 0px white;
+    background: var(--antique-gold);
+    color: black;
+}
+footer .copyright{
+    text-align: center;
+    font-family: "Figtree", sans-serif;
+    padding: 15px 0;
+    border-top: 1px solid grey;
+    background: rgba(0,0,0,0.6);
+    max-width: 1200px;
+    margin: auto;
+}
+
 /* Mobile */
 @media (max-width: 767px) {
     header .logo img{width: 100px;}    
@@ -666,7 +769,10 @@ main .reviews .wrap .flex .card .txt .stats img{
 
     main .reviews .wrap .flex{padding: 40px 20px;}
 
-    main .join .grid, main .about .grid{grid-template-columns: repeat(1, 1fr);}
+    footer .grid{text-align: center;}
+    footer .grid .signup form .email{margin: 20px auto;}
+
+    main .join .grid, main .about .grid, footer .grid{grid-template-columns: repeat(1, 1fr);}
     main .join .grid::after{min-height: 100%; height: 100%; width: 5px;}
 }
 
@@ -683,7 +789,9 @@ main .reviews .wrap .flex .card .txt .stats img{
     main .about{padding: 30px 20px;}
     main .about .grid .txt{padding: 30px 20px;}
 
-    main .join .grid, main .how .grid{grid-template-columns: repeat(2, 1fr);}
+    footer .grid .signup form .email{margin: 20px auto;}
+
+    main .join .grid, main .how .grid, footer .grid{grid-template-columns: repeat(2, 1fr); text-align: center;}
 }
 
 /* Desktop */
