@@ -161,7 +161,7 @@ header ul li a:hover{
     color: white;
 }
 
-header .menu{
+header .menuBtn{
     width: 30px;
     display: flex;
     align-items: center;
@@ -171,45 +171,76 @@ header .menu{
     cursor: pointer;
     margin-right: 7px;
 }
-header .menu:hover div:first-child,header .menu:hover div:last-child, header .menu:hover div:nth-child(2){
+header .menuBtn:hover div:first-child,header .menuBtn:hover div:last-child, header .menuBtn:hover div:nth-child(2){
     background: white;
 }
-header .menu div{
+header .menuBtn div{
     background: var(--antique-gold);
     height: 3px;
     border-radius: 40px;
     margin-left: auto;
 }
-header .menu div:first-child{
+header .menuBtn div:first-child{
     width: 90%;
 }
-header .menu div:nth-child(2){
+header .menuBtn div:nth-child(2){
     width: 70%;
 }
-header .menu div:last-child{
+header .menuBtn div:last-child{
     width: 40%;
 }
 
-header .menu.open{
+header.open .menuBtn{
     margin-top: 10px;
 }
-header .menu.open div:first-child{
+header.open .menuBtn div:first-child{
     transform: translate(-4px, 3px);
     rotate: 45deg;
     width: 100%;
 }
-header .menu.open div:nth-child(2){
+header.open .menuBtn div:nth-child(2){
     width: 70%;
     opacity: 0;
 }
-header .menu.open div:last-child{
+header.open .menuBtn div:last-child{
     width: 40%;
     width: 100%;
     transform: translate(6px, -14px);
     rotate: -45deg;
 }
 
+
 /* HERO SECTION */
+main.open .menu{
+    max-height: 2000px;
+    padding: 20px;
+}
+main .menu{
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 5;
+    color: white;
+    text-align: center;
+    max-height: 0px;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease, top 0.5s ease;
+    overflow: hidden;
+}
+main .menu.adjust{top: 70px;}
+main .menu h4{
+    font-family: "Titallium", system-ui;
+    color: var(--antique-gold);
+    margin-bottom: 30px;
+}
+main .menu a{
+    display: block;
+    padding: 10px;
+    color: white;
+    font-family: "Figtree", sans-serif;
+}
+
 main .hero{
     display: flex;
     align-items: center;
@@ -217,12 +248,12 @@ main .hero{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 95vh;
+    height: auto;
     overflow: hidden;
 }
 main .hero .wrap{
     width: 100%;
-    min-height: 100%;
+    height: auto;
     padding: 0px 30px;
     background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7), rgba(0,0,0,0.1), rgba(0,0,0,0.1));
 }
@@ -799,7 +830,7 @@ footer .copyright{
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
-    header .menu{display: none;}  
+    header .menuBtn{display: none;}  
 
     main .hero .wrap{background: linear-gradient(to right, rgba(0,0,0,0.7)); padding: 0px 20px; text-align: center;}
     main .hero .wrap .txt{width: 90%; margin: auto;}
@@ -819,7 +850,7 @@ footer .copyright{
 
 /* Desktop */
 @media (min-width: 1025px) {
-    header .menu{
+    header .menuBtn, main .menu{
         display: none;
     } 
 }

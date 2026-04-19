@@ -8,3 +8,7 @@ from django.contrib import messages
 def landing(request):
     template = loader.get_template('landing.html')
     return HttpResponse(template.render(request=request))
+
+def join_us(request):
+    template = loader.get_template('join_us.html')
+    return HttpResponse(template.render(request=request))
