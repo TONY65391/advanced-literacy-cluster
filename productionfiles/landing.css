@@ -65,7 +65,7 @@ span {
 
 /* Links */
 a {
-  font-size: clamp(0.65rem, 1.3vw, 1.1rem);
+  font-size: clamp(0.75rem, 1.3vw, 1.1rem);
   text-decoration: none;
 }
 
@@ -457,9 +457,7 @@ main .join .card a:hover{
 /* HOW */
 main .how{
     text-align: center;
-    background: var(--deep-navy);
-    background: var(--library-green);
-    background: #F5F3EF;
+    background: #999997;
     color: black;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -473,27 +471,59 @@ main .how h3{
     text-align: center;
     font-family: "Figtree", sans-serif;/
 }
-main table{
+main .how .grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 20px;
+    width: min(1200px, 80%);
+}
+main .how .grid div{
+    border-radius: 10px;
+    border: 1px solid black;
+    background: rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+main .how .grid div h5{
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    font-weight: bold;
+    font-family: "Figtree", sans-serif;
+    font-size: min(1.5rem, 20px);
+}
+main .how .grid div p{
+    padding: 20px 15px;
+    color: black;
+}
+main .how table{
     margin: 20px auto;
     width: min(1200px, 80%);
     border: 2px solid black;
     border-collapse: collapse;
-    overflow-x: scroll;
+    overflow: hidden;
 }
-main table tbody tr td{
+main .how table h5{font-size: min(1.5rem, 20px);}
+main .how table tbody tr td{
     background: white;
     border: 2px solid black;
 }
-main table tr th{
+main .how table tr th{
     padding: 10px;
     background: black;
     color: white;
     font-family: "Titallium", sans-serif;
 }
-main table tbody tr td{
+main .how table tbody tr td{
     font-family: "Figtree", system-ui;
     padding: 10px;
     opacity: 0.7;
+}
+
+/* VISION */
+main .vision{
+    padding: 60px 0;
 }
 
 
@@ -671,6 +701,9 @@ main .reviews .wrap .flex .card .txt .stats img{
 /* FOOTER */
 footer{
     background: url(./images/footer_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     padding: 60px 0 0 0;
 }
@@ -813,6 +846,8 @@ footer .copyright{
     main .about .grid{padding: 10px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;}
     main .about .grid .txt{padding: 30px 20px;}
     main .about .grid .txt a{margin-top: 20px;}
+
+    main .how .grid{grid-template-columns: repeat(1, 1fr);}
 
     main .month{background-size: contain;}
     main .month .wrap .grid{flex-direction: column-reverse;}
