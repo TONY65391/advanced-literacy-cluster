@@ -1,1 +1,76 @@
-@import url("./landing.css")
+@import url("./landing.css");
+
+main .heroGrid .grid{position: relative;}
+main .heroGrid .grid .slide:first-child{background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/join1.png');}
+main .heroGrid .grid .slide:nth-child(2){background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/join2.png');}
+main .heroGrid .grid .slide:last-child{background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/join3.png');}
+main .heroGrid .grid .slide{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    height: min(90vh, 1200px);
+    width: 100%;
+    transition: opacity 0.5 ease;
+}
+main .heroGrid .grid .slide.active{opacity: 1; z-index: 4;}
+main .heroGrid .grid .slide .wrap{
+    height: min(90vh, 1200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1200px;
+    width: min(1200px, 90%);
+    margin: auto;
+    color: white;
+    line-height: 1.5;
+}
+main .heroGrid .grid .slide h5{
+    margin-right: auto;
+    padding: 10px;
+    font-family: "Figtree", sans-serif;
+    background: var(--antique-gold);
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px var(--antique-gold);
+}
+main .heroGrid .grid .slide h1{
+    margin-right: auto;
+    margin-top: 10px;
+    width: 50%;
+    font-size: clamp(1.2rem, 5vw, 2.5rem);
+}
+main .heroGrid .grid .slide p{
+    margin-right: auto;
+    width: 40%;
+    opacity: 0.7;
+}
+main .heroGrid .grid .slide div{
+    margin-right: auto;
+    margin-top: 20px;
+}
+main .heroGrid .grid .slide div a, main .heroGrid .grid .slide div a:last-child:hover{
+    padding: 10px 20px;
+    border-radius: 9px;
+    background: var(--antique-gold);
+    border: 2px solid var(--antique-gold);
+    color: black;
+    font-weight: bold;
+    font-family: "Figtree", sans-serif;
+}
+main .heroGrid .grid .slide div a:last-child, main .heroGrid .grid .slide div a:hover{
+    background: none;
+    color: white;
+}
+
+@media (max-width: 767px){
+    main .heroGrid .grid .slide .wrap h5{margin-right: 0;}
+    main .heroGrid .grid .slide .wrap h1{width: 100%; text-align: center;}
+    main .heroGrid .grid .slide .wrap p{width: 100%; text-align: center;}
+    main .heroGrid .grid .slide .wrap div{margin-right: 0;}
+}

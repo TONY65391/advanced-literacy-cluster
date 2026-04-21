@@ -3,6 +3,21 @@ const menuBtn = header.querySelector('.menuBtn');
 const main = document.querySelector('main');
 const menu = main.querySelector('.menu');
 
+const slides = [...document.querySelectorAll('main .heroGrid .grid .slide')];
+if (slides){
+    var currentIndex = 0;
+    function showSlide(){
+        if (currentIndex === slides.length){
+            currentIndex = 0;
+        }
+        slides.forEach(slide => {slide.classList.remove('active')});
+        slides[currentIndex].classList.add('active');
+        currentIndex++;
+    }
+    setInterval(() => {
+        showSlide();
+    }, 4500);
+}
 window.addEventListener('load', () => scrollHeader(window.scrollY))
 window.addEventListener('scroll', () => scrollHeader(window.scrollY))
 menuBtn.onclick = () => {
