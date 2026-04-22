@@ -248,12 +248,12 @@ main .hero{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: auto;
+    min-height: 100vh;
     overflow: hidden;
 }
 main .hero .wrap{
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     padding: 0px 30px;
     background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7), rgba(0,0,0,0.1), rgba(0,0,0,0.1));
 }
@@ -634,7 +634,7 @@ main .reviews .wrap .flex{
 main .reviews .wrap .flex .card{
     width: min(400px, 100%);
     border-radius: 10px;
-    border: 2px solid var(--antique-gold);
+    border: 1px solid var(--antique-gold);
     -webkit-backdrop-filter: blur(10px) brightness(60%);
     backdrop-filter: blur(10px) brightness(60%);
     padding: 20px;
@@ -648,7 +648,7 @@ main .reviews .wrap .flex .card{
 }
 main .reviews .wrap .flex .card:hover{
     cursor: pointer;
-    box-shadow: 0px 0px 0px 3px var(--antique-gold);
+    box-shadow: 0px 0px 0px 2px var(--antique-gold);
 }
 main .reviews .wrap .flex .card .avatar{
     display: flex;
@@ -656,7 +656,8 @@ main .reviews .wrap .flex .card .avatar{
     justify-content: space-between;
 } 
 main .reviews .wrap .flex .card .avatar img{
-    max-width: 50%;
+    width: 150px;
+    height: 100px;
     object-fit: cover;
     border-radius: 10px;
 }
