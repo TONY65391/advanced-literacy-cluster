@@ -14,6 +14,7 @@ if (slides){
         slides[currentIndex].classList.add('active');
         currentIndex++;
     }
+    showSlide();
     setInterval(() => {
         showSlide();
     }, 4500);

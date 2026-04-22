@@ -1,6 +1,6 @@
 @import url("./landing.css");
 
-main .heroGrid .grid{position: relative;}
+main .heroGrid .grid{position: relative; height: min(90vh, 1200px);}
 main .heroGrid .grid .slide:first-child{background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/join1.png');}
 main .heroGrid .grid .slide:nth-child(2){background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/join2.png');}
 main .heroGrid .grid .slide:last-child{background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/join3.png');}
@@ -16,7 +16,7 @@ main .heroGrid .grid .slide{
     width: 100%;
     transition: opacity 0.5 ease;
 }
-main .heroGrid .grid .slide.active{opacity: 1; z-index: 4;}
+main .heroGrid .grid .slide.active{opacity: 1; z-index: 2;}
 main .heroGrid .grid .slide .wrap{
     height: min(90vh, 1200px);
     display: flex;
@@ -31,7 +31,7 @@ main .heroGrid .grid .slide .wrap{
 }
 main .heroGrid .grid .slide h5{
     margin-right: auto;
-    padding: 10px;
+    padding: 10px 20px;
     font-family: "Figtree", sans-serif;
     background: var(--antique-gold);
     color: black;
@@ -72,5 +72,11 @@ main .heroGrid .grid .slide div a:last-child, main .heroGrid .grid .slide div a:
     main .heroGrid .grid .slide .wrap h5{margin-right: 0;}
     main .heroGrid .grid .slide .wrap h1{width: 100%; text-align: center;}
     main .heroGrid .grid .slide .wrap p{width: 100%; text-align: center;}
+    main .heroGrid .grid .slide .wrap div{margin-right: 0;}
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    main .heroGrid .grid .slide .wrap h5{margin-right: 0;}
+    main .heroGrid .grid .slide .wrap h1{width: 80%; text-align: center; margin-right: 0;}
+    main .heroGrid .grid .slide .wrap p{width: 80%; text-align: center; margin-right: 0;}
     main .heroGrid .grid .slide .wrap div{margin-right: 0;}
 }
