@@ -1,6 +1,6 @@
 @import url("./landing.css");
 
-main .heroGrid .grid{position: relative;}
+main .heroGrid .grid{position: relative; height: min(90vh, 1200px);}
 main .heroGrid .grid .slide:first-child{background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/join1.png');}
 main .heroGrid .grid .slide:nth-child(2){background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/join2.png');}
 main .heroGrid .grid .slide:last-child{background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/join3.png');}
@@ -16,7 +16,7 @@ main .heroGrid .grid .slide{
     width: 100%;
     transition: opacity 0.5 ease;
 }
-main .heroGrid .grid .slide.active{opacity: 1; z-index: 4;}
+main .heroGrid .grid .slide.active{opacity: 1; z-index: 2;}
 main .heroGrid .grid .slide .wrap{
     height: min(90vh, 1200px);
     display: flex;
@@ -31,7 +31,7 @@ main .heroGrid .grid .slide .wrap{
 }
 main .heroGrid .grid .slide h5{
     margin-right: auto;
-    padding: 10px;
+    padding: 10px 20px;
     font-family: "Figtree", sans-serif;
     background: var(--antique-gold);
     color: black;
@@ -68,9 +68,97 @@ main .heroGrid .grid .slide div a:last-child, main .heroGrid .grid .slide div a:
     color: white;
 }
 
+/* REGISTER */
+main .reg{
+    text-align: center;
+    padding: 60px 0;
+    color: black;
+    background: rgb(204, 184, 146);
+}
+main .reg h3{
+    font-family: "Figtree", system-ui;
+}
+main .reg .cont{
+    width: min(95%, 1200px);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    text-align: left;
+}
+main .reg .cont form{
+    width: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5) inset;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+main .reg .cont form h4{font-family: "Figtree", sans-serif;}
+main .reg .name, main .reg .email{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0;
+    width: 100%;
+}
+main .reg .name div, main .reg .email div{
+    display: flex;
+    align-items: stretch;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid black;
+    width: 100%;
+}
+main .reg .name div label, main .reg .email div label{
+    padding: 10px;
+    background: black;
+    color: white;
+}
+main .reg .name div input, main .reg .email div input{
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+    width: 100%;
+}
+main .reg textarea{
+    resize: none;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+    max-width: 100%;
+    margin: auto;
+}
+main .reg form button{
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 0;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-family: "Figtree", sans-serif;
+    border: 1px solid black;
+}
+main .reg form button:hover{
+    background: rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
 @media (max-width: 767px){
     main .heroGrid .grid .slide .wrap h5{margin-right: 0;}
     main .heroGrid .grid .slide .wrap h1{width: 100%; text-align: center;}
     main .heroGrid .grid .slide .wrap p{width: 100%; text-align: center;}
+    main .heroGrid .grid .slide .wrap div{margin-right: 0;}
+
+    main .reg .cont form{width: 100%;}
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    main .heroGrid .grid .slide .wrap h5{margin-right: 0;}
+    main .heroGrid .grid .slide .wrap h1{width: 80%; text-align: center; margin-right: 0;}
+    main .heroGrid .grid .slide .wrap p{width: 80%; text-align: center; margin-right: 0;}
     main .heroGrid .grid .slide .wrap div{margin-right: 0;}
 }
