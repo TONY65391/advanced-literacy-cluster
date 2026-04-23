@@ -4,7 +4,8 @@ const main = document.querySelector('main');
 const menu = main.querySelector('.menu');
 
 const slides = [...document.querySelectorAll('main .heroGrid .grid .slide')];
-if (slides){
+
+if (slides.length > 0){
     var currentIndex = 0;
     function showSlide(){
         if (currentIndex === slides.length){
@@ -19,6 +20,8 @@ if (slides){
         showSlide();
     }, 4500);
 }
+
+
 window.addEventListener('load', () => scrollHeader(window.scrollY))
 window.addEventListener('scroll', () => scrollHeader(window.scrollY))
 menuBtn.onclick = () => {
