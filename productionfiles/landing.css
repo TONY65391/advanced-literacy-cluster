@@ -66,7 +66,7 @@ span {
 
 /* Links */
 a {
-  font-size: clamp(0.75rem, 1.3vw, 1.1rem);
+  font-size: clamp(0.85rem, 1.3vw, 1.1rem);
   text-decoration: none;
 }
 
@@ -123,7 +123,7 @@ header nav a{
     opacity: 0.7;
 }
 header nav a:hover{
-    color: var(--deep-teal);
+    color: var(--beige-cream);
     opacity: 1;
 }
 header nav a::after{
@@ -135,11 +135,12 @@ header nav a::after{
     transition: width 0.5s ease;
     height: 3px;
     border-radius: 20px;
-    background: linear-gradient(to right, var(--deep-teal));
+    background: linear-gradient(to right, var(--beige-cream));
 }
 header nav a:hover::after{
     width: 100%;
     opacity: 1;
+
 }
 header ul{
     display: flex;
@@ -289,7 +290,7 @@ main .hero .wrap .txt h2{
     line-height: 1.5;
     width: 60%;
     margin-right: auto;
-    text-shadow: 0px 0px 5px black;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
 }
 main .hero .wrap .txt p{opacity: 0.8; width: 50%; margin-right: auto;}
 main .hero .wrap .cta{
@@ -432,7 +433,7 @@ main .join .grid .card{
     flex-direction: column;
     justify-content: space-between;
     background: linear-gradient(to bottom right, var(--dark-teal), var(--beige-cream));
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
 }
 main .join .card:hover{
     cursor: pointer;
@@ -548,7 +549,7 @@ main .price .grid .card{
     color: var(--beige-cream);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
 main .price .grid .card .plan{
     padding: 15px;
@@ -911,9 +912,8 @@ footer .copyright{
     header .logo img{width: 100px;}    
     header nav, header ul{display: none;}
 
-    main .hero{ border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
     main .hero .wrap{background: linear-gradient(to right, rgba(0,0,0,0.7)); padding: 0px 20px; text-align: center;}
-    main .hero .wrap .txt h6{margin-right: 0; margin-bottom: 10px;}
+    main .hero .wrap .txt h5{margin-right: 0; margin-bottom: 10px;}
     main .hero .wrap .txt h2{font-size: 1.7rem; width: 100%;}
     main .hero .wrap .txt p{width: 80%; margin: 0 auto;}
     main .hero .wrap .cta{margin-right: 0;}

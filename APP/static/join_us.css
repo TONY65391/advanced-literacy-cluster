@@ -72,9 +72,9 @@ main .heroGrid .grid .slide div a:last-child, main .heroGrid .grid .slide div a:
 main .reg{
     text-align: center;
     padding: 60px 0;
-    color: black;
+    color: var(--beige-cream);
     /* background: rgb(204, 184, 146); */
-    background: var(--beige-cream);
+    background: var(--deep-teal);
 }
 main .reg h3{
     font-family: "Figtree", system-ui;
@@ -129,6 +129,7 @@ main .reg .name div input, main .reg .email div input{
     outline: none;
     padding: 0px 10px;
     width: 100%;
+    background: var(--beige-cream);
 }
 main .reg textarea{
     resize: none;
@@ -138,6 +139,7 @@ main .reg textarea{
     outline: none;
     max-width: 100%;
     margin: auto;
+    background: var(--beige-cream);
 }
 main .reg form button{
     font-size: 16px;
