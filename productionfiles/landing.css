@@ -99,7 +99,9 @@ header{
 }
 header.scroll{
     top: 0;
-    border-radius: 10px;
+    border-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     background: var(--deep-teal);
 }
 header .logo img{
@@ -520,6 +522,88 @@ main .how table tbody tr td{
     opacity: 0.7;
 }
 
+/* PRICE */
+main .price{
+    background: var(--deep-teal);
+    padding: 60px 0;
+    color: var(--beige-cream);
+}
+main .price h3{
+    font-family: "Figtree", sans-serif;
+    text-align: center;
+}
+main .price p{text-align: center; margin-top: 10px; font-style: oblique;}
+main .price .grid{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+main .price .grid .card{
+    font-family: "Figtree", sans-serif;
+    background: var(--beige-cream);
+    border: 2px solid var(--beige-cream);
+    color: var(--beige-cream);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+main .price .grid .card .plan{
+    padding: 15px;
+    background: var(--beige-cream);
+    color: var(--deep-teal);
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    font-style: italic;
+}
+main .price .grid .card .txt{
+    padding: 30px 15px;
+    background: var(--deep-navy);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main .price .grid .card .txt h5{
+    font-family: "Figtree", sans-serif;
+    font-style: italic;
+}
+main .price .grid .card .txt ul{
+    list-style: none;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+main .price .grid .card .txt ul li{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3px;
+}
+main .price .grid .card .txt a{
+    color: var(--deep-teal);
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid var(--beige-cream);
+    border-radius: 5px;
+    width: 100%;
+    margin: 20px 0 0 0;
+    display: block;
+    padding: 8px 0;
+    border: 2px solid var(--beige-cream);
+    background: var(--beige-cream);
+}
+main .price .grid .card .txt a:hover{
+    background: transparent;
+    color: var(--beige-cream);
+}
+
 
 /* MONTH */
 main .month{
@@ -842,6 +926,8 @@ footer .copyright{
 
     main .how .grid{grid-template-columns: repeat(1, 1fr);}
 
+    main .price .grid{grid-template-columns: repeat(1, 1fr); padding: 0px 20px; gap: 20px;}
+
     main .month{background-size: contain;}
     main .month .wrap .grid{flex-direction: column-reverse;}
     main .month .wrap .grid .txt{text-align: center;}
@@ -864,10 +950,12 @@ footer .copyright{
     main .hero .wrap .txt{width: 90%; margin: auto;}
     main .hero .wrap .txt h2{width: 100%; margin: 0 auto;}
     main .hero .wrap .txt p{width: 80%; margin: 10px auto;}
-    main .hero .wrap .txt h6, main .hero .wrap .cta{margin-right: 0;}
+    main .hero .wrap .txt h5, main .hero .wrap .cta{margin-right: 0;}
 
     main .about{padding: 30px 20px;}
     main .about .grid .txt{padding: 30px 20px;}
+
+    main .price .grid{grid-template-columns: repeat(2, 1fr); padding: 0px 20px; gap: 20px;}
 
     main .reviews .wrap .flex{padding: 40px 20px;}
 
