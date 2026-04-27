@@ -499,25 +499,32 @@ main .how .grid div p{
     padding: 20px 15px;
     color: black;
 }
-main .how table{
+
+main .how .cont{
+    max-width: 1200px;
+    width: min(1200px, 95%);
+    overflow-x: scroll;
+    margin: auto;
+}
+main .how .cont table{
     margin: 20px auto;
     width: min(1200px, 80%);
     border: 2px solid black;
     border-collapse: collapse;
-    overflow: hidden;
+    white-space: nowrap;
 }
-main .how table h5{font-size: min(1.5rem, 20px);}
-main .how table tbody tr td{
+main .how .cont table h5{font-size: min(1.5rem, 20px);}
+main .how .cont table tbody tr td{
     background: white;
     border: 2px solid black;
 }
-main .how table tr th{
+main .how .cont table tr th{
     padding: 10px;
     background: black;
     color: white;
     font-family: "Titallium", sans-serif;
 }
-main .how table tbody tr td{
+main .how .cont table tbody tr td{
     font-family: "Figtree", system-ui;
     padding: 10px;
     opacity: 0.7;
@@ -603,6 +610,36 @@ main .price .grid .card .txt a{
 main .price .grid .card .txt a:hover{
     background: transparent;
     color: var(--beige-cream);
+}
+
+main .price .cont{
+    max-width: 1200px;
+    width: min(1200px, 95%);
+    overflow-x: scroll;
+    margin: 30px auto 0;
+}
+main .price .cont table{
+    border: 2px solid var(--beige-cream);
+    /* max-width: 1200px;
+    width: min(90%, 1200px); */
+    border-collapse: collapse;
+    overflow: hidden;
+    font-family: "Figtree", sans-serif;
+    white-space: nowrap;
+}
+main .price .cont table thead tr th{
+    background: var(--beige-cream);
+    color: var(--deep-teal);
+    padding: 10px 15px;
+}
+main .price .cont table tbody tr{
+    border: 2px solid var(--beige-cream);
+}
+main .price .cont table tbody tr td{
+    text-align: center;
+    padding: 8px 15px;
+    border-right: 2px solid var(--beige-cream);
+    background: var(--deep-navy);
 }
 
 
